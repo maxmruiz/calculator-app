@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --dark: #3f4452;
+    --darker: #2e323d;
+    --darkest: #22252D;
+    --white: #fff;
+    --green: #00A36C;
+    --blue: #6495ED;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    height: 100vh;
+}
+
+.calculator {
+    background-color: var(--darkest);
+    width: 100%;
+    max-width: 370px;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.display {
+    min-width: 200px;
+    margin-top: 80px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: var(--white);
+    text-align: right;
+    flex: 1 1 0%;
+}
+
+.display .input {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.display .output {
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.display .operator {
+    color: var(--blue);
+}
+
+.display .brackets,
+.display .percent {
+    color: var(--green);
+}
+
+.keys {
+    background-color: var(--darker);
+    padding: 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1rem;
+    box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+    background-color: var(--darkest);
+    border-radius: 1rem;
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.keys .key span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.keys .key:hover {
+    transform: scale(1.05);
+}
+
+.keys .key.operator span{
+    color: var(--blue);
+}
+
+.keys .key.action span{
+    color: var(--green);
+}
